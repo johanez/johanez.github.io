@@ -3,7 +3,7 @@ var wWidth =document.documentElement.clientWidth,
 var fixPix = 1200;
 var fixWidth = Math.min(fixPix, fixPix*(wWidth/wHeight))
 	fixHeight= Math.min(fixPix,fixWidth*(wHeight/wWidth));
-console.log([fixWidth, fixHeight]);
+// console.log([fixWidth, fixHeight]);
 
 
 var svg = d3.select("body")
@@ -64,7 +64,6 @@ queue()
 //Main function
 
 function ready(error, nodesJson, linksJson) {
-  
     // map of node ids
   var nodeMap = {};
   nodesJson.forEach(function(x) {
@@ -163,6 +162,7 @@ function ready(error, nodesJson, linksJson) {
   // make  neigbours visible 
   function mouseclick(d){
     force.nodes()[0].fixed=true;
+    force.nodes()[1].fixed=true;
     if (d3.event.defaultPrevented) return;
     //if (d.id == "geo")
     if (!d.clicked) {
@@ -184,7 +184,7 @@ function ready(error, nodesJson, linksJson) {
           visibleLinks.push(l);
       });
       force.nodes()[1].text=d.tt;
-      console.log(visibleNodes[1].text);      
+      // console.log(visibleNodes[1].text);      
     }
     d3.selectAll("#quote")
     	.style("opacity", 1)
@@ -200,12 +200,12 @@ function ready(error, nodesJson, linksJson) {
   // reste graph
   function dblclick(d){
     if (d3.event.defaultPrevented) return; 
-    //console.log("double click " + d.id + d.clicked)
+    //
     //d.clicked = false;
-    visibleNodes = [nodesJson[0]];
-    var visibleNodes = [nodesJson[0], nodesJson[1]];
+    visibleNodes = [nodesJson[0], nodesJson[1]];
+    console.log(visibleNodes);
     visibleLinks = [];
-    console.log(node);
+    // console.log(node);
     nodesJson.forEach(function(n){
       n.visible = false;
       n.clicked = false;
@@ -232,14 +232,12 @@ function ready(error, nodesJson, linksJson) {
     wHeight = window.innerHeight-10;
     fixWidth = Math.min(fixPix, fixPix*(wWidth/wHeight))
     fixHeight= Math.min(fixPix, fixPix*(wHeight/wWidth));
-    console.log([fixWidth, fixPix*(wWidth/wHeight), fixHeight, fixPix*wHeight/wWidth]);
+  //  console.log([fixWidth, fixPix*(wWidth/wHeight), fixHeight, fixPix*wHeight/wWidth]);
     svg.attr("viewBox", "0 0 " + fixWidth + " " +fixHeight);
     force.size([fixWidth,fixHeight]);
     // allow  node to drift back to center
     force.nodes()[0].fixed=false;
-  //  force.nodes()[1].fixed=true;
-    force.nodes()[1].x=fixWidth*4/5;
-    force.nodes()[1].y=fixHeight/2;
+    force.nodes()[1].fixed=false;
     update();
   }
   d3.select(window).on("resize", resize);  
@@ -307,9 +305,9 @@ function insertTextDivs(t, id, text, rank) {
     var maxWordLength = text.split(" ").reduce(longerString).length;
     var fsize = scaleFont(rank) *scaleLength(maxWordLength);
     var el = d3.select(t);
-    console.log(el);
+ //   console.log(el);
     var p = d3.select(t.parentNode);
-    console.log(p);
+    //console.log(p);
     p.append("foreignObject")
         .attr('x', -width/2)
         .attr('y', -width/2)
