@@ -183,9 +183,9 @@ function ready(error, nodesJson, linksJson) {
         if (l.target.visible & l.source.visible)
           visibleLinks.push(l);
       });
-      force.nodes()[1].text=d.tt;
-      // console.log(visibleNodes[1].text);      
+      update();
     }
+    console.log(d.tt);
     d3.selectAll("#quote")
     	.style("opacity", 1)
     	.html(d.tt);
@@ -193,8 +193,6 @@ function ready(error, nodesJson, linksJson) {
     	.delay(7000)
     	.duration(2000)
     	.style("opacity", 0);
-
-    update();
   }
 
   // reste graph
