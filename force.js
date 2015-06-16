@@ -1,3 +1,4 @@
+console.log("start");
 var wWidth =document.documentElement.clientWidth,
 	  wHeight=document.documentElement.clientHeight-20;
 var fixPix = 1200;
@@ -164,9 +165,8 @@ function ready(error, nodesJson, linksJson) {
     force.nodes()[0].fixed=true;
     force.nodes()[1].fixed=true;
     if (d3.event.defaultPrevented) return;
-    //if (d.id == "geo")
     if (!d.clicked) {
-      //console.log("click " + d.id + d.clicked)
+      console.log("click " + d.id + d.clicked)
       d.clicked=true;
       // console.log(d);
       nodesJson.forEach(function(n){
