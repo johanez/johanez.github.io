@@ -25,7 +25,7 @@ index,id,name,group,rank,visible,clicked,start,end,lat,long,tt
 23,css,CSS,code,6,0,0,,,,,
 24,sql,SQL,code,6,0,0,,,,,
 25,gis,GIS,geo,4,0,0,,,,,"“A system for input, storage, manipulation, and output of geographic information“<a href=""http://www.ncgia.ucsb.edu/giscc/units/u002/u002.html"" target=""_blanck"">Goodchild 1997</a>"
-26,stats,(spatial) Statistics,geo,4,0,0,,,,,
+26,stats,(spatial) Statistics,geo,4,0,0,,,,,γ(h)=c0+c(1-exp(-h/r))
 27,postgis,Spatial Databases,geo,5,0,0,,,,,
 28,gdal,gdal,geo,6,0,0,,,,,Gdal is everywhere.
 29,impro,improvise,theater,4,0,0,,,,,There's always some room for improvisation.

@@ -28,7 +28,7 @@ var scaleRadius = d3.scale.log()
                     .range([100,15]);
 var scaleFont = d3.scale.log()
                     .domain([1,6])
-                    .range([85,16]);
+                    .range([85,15]);
 var scaleLength = d3.scale.log()
                     .domain([1,20])
                     .range([1,0.12]);
@@ -174,13 +174,27 @@ function ready(error, nodesJson, linksJson) {
   function mouseclick(d){
     force.nodes()[0].fixed=true;
     force.nodes()[1].fixed=true;
-
+    d3.selectAll("#quote")
+      .style("opacity", 1)
+      .html(d.tt);
+    d3.selectAll("#quote").transition()
+      .delay(6000)
+      .duration(2000)
+      .style("opacity", 0);
     node.style("fill", function(n){
       if(n.group!="quote"){
         if (n.id == d.id){
           return color(n.group);
         } else return color(n.group + "Hi")
        } 
+      });
+    node.transition()
+      .delay(4000)
+      .duration(2000)
+      .style("fill", function(n){
+        if(n.group!="quote"){
+          return color(n.group);
+        }  
       });
     if (d3.event.defaultPrevented) return;
     if (!d.clicked & d.group!="quote") {
@@ -201,21 +215,7 @@ function ready(error, nodesJson, linksJson) {
       update();
     }
 
-    d3.selectAll("#quote")
-    	.style("opacity", 1)
-    	.html(d.tt);
-    d3.selectAll("#quote").transition()
-    	.delay(7000)
-    	.duration(2000)
-    	.style("opacity", 0);
-    node.transition()
-      .delay(5000)
-      .duration(2000)
-      .style("fill", function(n){
-        if(n.group!="quote"){
-          return color(n.group);
-        }  
-      });
+
   }
 
   // reset graph
