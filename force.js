@@ -176,26 +176,27 @@ function ready(error, nodesJson, linksJson) {
     force.nodes()[1].fixed=true;
     d3.selectAll("#quote")
       .style("opacity", 1)
-      .html(d.tt);
-    d3.selectAll("#quote").transition()
+      .html(d.tt)
+      .transition()
       .delay(6000)
       .duration(2000)
       .style("opacity", 0);
-    node.style("fill", function(n){
-      if(n.group!="quote"){
-        if (n.id == d.id){
-          return color(n.group);
-        } else return color(n.group + "Hi")
-       } 
-      });
-    node.transition()
-      .delay(4000)
-      .duration(2000)
+    node
       .style("fill", function(n){
-        if(n.group!="quote"){
-          return color(n.group);
-        }  
-      });
+          if(n.group!="quote"){
+            if (n.id == d.id){
+              return color(n.group);
+            } else return color(n.group + "Hi")
+          } 
+        })
+      .transition()
+        .delay(0)
+        .duration(2000)
+        .style("fill", function(n){
+          if(n.group!="quote"){
+            return color(n.group);
+          }  
+        });
     if (d3.event.defaultPrevented) return;
     if (!d.clicked & d.group!="quote") {
       d.clicked=true;
