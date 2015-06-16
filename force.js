@@ -26,6 +26,15 @@ var scaleLength = d3.scale.log()
                     .range([1,0.12]);
 
 var color = d3.scale.category10();
+var co = d3.scale.ordinal()
+  .domain([5,0])
+  .range(['rgb(31,120,180)','rgb(51,160,44)','rgb(227,26,28)','rgb(255,127,0)','rgb(106,61,154)', 'rgb(177,89,40)']);
+var coHi = d3.scale.ordinal()
+  .domain([0,5])
+  .range(['rgb(166,206,227)','rgb(178,223,138)','rgb(251,154,153)','rgb(253,191,111)', 'rgb(202,178,214)', 'rgb(255,255,153)']);
+
+
+
 
 var force = d3.layout.force()
     .gravity(.06)
@@ -94,6 +103,9 @@ function ready(error, nodesJson, linksJson) {
        return linkedById[a.id + "," + b.id];
   }
 
+
+
+
   var visibleNodes = [nodesJson[0], nodesJson[1]];
   var visibleLinks = [];
   // nodesJson.forEach(function(n){
@@ -137,7 +149,7 @@ function ready(error, nodesJson, linksJson) {
     node.enter().append("g")
         .attr("class", "node")
         .style("fill", function(d) {
-          if (d.group!="quote") return color(d.group); 
+          if (d.group!="quote")  return color(d.group);
         })
         .call(force.drag)
         .append("circle")
@@ -165,10 +177,8 @@ function ready(error, nodesJson, linksJson) {
     force.nodes()[0].fixed=true;
     force.nodes()[1].fixed=true;
     if (d3.event.defaultPrevented) return;
-    if (!d.clicked) {
-      console.log("click " + d.id + d.clicked)
+    if (!d.clicked & d.group!="quote") {
       d.clicked=true;
-      // console.log(d);
       nodesJson.forEach(function(n){
         if (neighboring(d,n)>-1){
   //        console.log(neighboring(d,n));
@@ -185,7 +195,16 @@ function ready(error, nodesJson, linksJson) {
       });
       update();
     }
-    console.log(d.tt);
+    // svg.select("#c"+d.id)
+    //   .style("fill", function(d) {
+    //       if (d.group!="quote")  return coHi(d.group);
+    //     });
+    // svg.select("#c"+d.id).transition()
+    //   .duration(200)
+    //   .style("fill", function(d) {
+    //       if (d.group!="quote")  return co(d.group);
+    //     });
+    
     d3.selectAll("#quote")
     	.style("opacity", 1)
     	.html(d.tt);
@@ -303,6 +322,11 @@ function insertTextDivs(t, id, text, rank) {
     var maxWordLength = text.split(" ").reduce(longerString).length;
     var fsize = scaleFont(rank) *scaleLength(maxWordLength);
     var el = d3.select(t);
+    el.append("svg:text")
+      .attr("class", "nodetext")
+      .attr("dx", 12)
+      .attr("dy", ".35em")
+      .text(function(d) { return text });
  //   console.log(el);
     var p = d3.select(t.parentNode);
     //console.log(p);
