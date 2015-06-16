@@ -178,7 +178,7 @@ function ready(error, nodesJson, linksJson) {
       .style("opacity", 1)
       .html(d.tt)
       .transition()
-      .delay(6000)
+      .delay(7000)
       .duration(2000)
       .style("opacity", 0);
     node
