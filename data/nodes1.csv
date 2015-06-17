@@ -7,20 +7,20 @@ index,id,name,group,rank,visible,clicked,start,end,lat,long,tt
 5,intgiz,Intern Reference Database,edu,5,0,0,2013-11,2014-04,,,Design of spatial reference database and validation concept for satellite based forest cover monitoring 
 6,wur,WUR,companies,3,0,0,,,,,“To explore the potential of nature to improve the quality of life“ <i>WUR</i>
 7,research_ass,Research Assistant,companies,2,0,0,2014-11,2015-08,,,For my current work I'm developing land cover mapping methods for the <a href="http://www.esa-landcover-cci.org" target="_blank">EU Climate Change Initiative Land Cover Project.</a>
-8,study_ass,Study Assitant Earth Observation,companies,5,0,0,2014-04,2014-05,,,Assisting MSc studends in computer practicals.
-9,intseds,Intern GIS coordination,edu,5,0,0,2010-11,2011-03,,,Coordinating field work & Spatial database management
+8,study_ass,Study Assitant Earth Observation,companies,5,0,0,2014-04,2014-05,,,Assisting MSc studends in computer practicals. I enjoy when their curiosity is triggered.
+9,intseds,Intern GIS coordination,edu,5,0,0,2010-11,2011-03,,,Coordinating field work & Spatial database management. Chai at 5:30 am and rice with lentils for lunch. 
 10,fiji,Fiji,places,6,0,0,,,-18.142,178.442,Vinaka vaka levu!
 11,india,India,places,6,0,0,,,17.91,83.36,
-12,wag,Wageningen,places,4,0,0,,,51.97,5.66,City of Life Sciences
+12,wag,Wageningen,places,4,0,0,,,51.97,5.66,City of Life Sciences (And of an international and inspiring student community)
 13,berlin,Berlin,places,6,0,0,,,2.52,13.41,Halleluja Berlin! Alle wollen dahin!
 14,hu,HU Berlin,companies,5,0,0,,,,,
-15,hd,Heidelberg,places,6,0,0,,,49.399,8.67,
+15,hd,Heidelberg,places,6,0,0,,,49.399,8.67,Semper Apertus
 16,unihd,Uni Heidelberg,companies,5,0,0,,,,,
-17,rs,Remote Sensing,geo,4,0,0,,,,,
+17,rs,Remote Sensing,geo,4,0,0,,,,,landcover change detection - time series analysis - random forest models - data fusion ... 
 18,r,R,code,4,0,0,,,,,"“R is very much a vehicle for newly developing methods of interactive data analysis.“<a href=""http://cran.r-project.org/"" target=""_blanck"">r-project.org</a>"
 19,python,python,code,5,0,0,,,,,“What is the air-speed velocity of an unladen swallow?“<i>Monty Python</i>
-20,linux,Linux,code,5,0,0,,,,,
-21,js,Java Script,code,5,0,0,,,,,""Exploring and learning, for example <a href='http://d3js.org/' target='_black'>d3.</a>""
+20,linux,Linux,code,5,0,0,,,,,My favourite penguin.
+21,js,Java Script,code,5,0,0,,,,,"Exploring and learning, for example <a href=""http://d3js.org/"" target=""_black"">d3.</a>"
 22,html,HTML,code,5,0,0,,,,,
 23,css,CSS,code,6,0,0,,,,,
 24,sql,SQL,code,6,0,0,,,,,
@@ -31,7 +31,7 @@ index,id,name,group,rank,visible,clicked,start,end,lat,long,tt
 29,impro,improvise,theater,4,0,0,,,,,There's always some room for improvisation.
 30,learn,learn,theater,4,0,0,,,,,My path is not always straight. I allow myself to follow my passions, they inspire me to give my best.
 31,embrace,facilitation,theater,4,0,0,,,,,Say yes!
-32,interact,interact,theater,4,0,0,,,,,
+32,interact,interact,theater,4,0,0,,,,,Turning the stage into a place of encounters. Opening up new spaces for dialogue.
 33,maps,Maps,places,4,0,0,,,,,
 34,esa,ESA,companies,5,0,0,,,,,
 35,italy,Italy,places,6,0,0,,,41.892,12.511,
