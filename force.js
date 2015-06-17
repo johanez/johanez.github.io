@@ -177,6 +177,7 @@ function ready(error, nodesJson, linksJson) {
     d3.selectAll("#quote")
       .style("opacity", 1)
       .html(d.tt)
+      .interrupt() // cancel the current transition
       .transition()
       .delay(7000)
       .duration(2000)
@@ -189,6 +190,7 @@ function ready(error, nodesJson, linksJson) {
             } else return color(n.group + "Hi")
           } 
         })
+      .interrupt()
       .transition()
         .delay(0)
         .duration(2000)
